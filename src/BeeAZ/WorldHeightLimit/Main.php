@@ -18,10 +18,10 @@ class Main extends PluginBase implements Listener{
    $pos = $event->getBlock()->getPosition();
    $world = $player->getWorld()->getFolderName();
    $config = $this->getConfig()->getAll();
-   if(in_array($world, $config["Worlds"])){
-   if($pos->y > $config["Height"]){
-    $player->sendMessage($config["Message"]);
-    $event->cancel();
+     if(in_array($world, $config["Worlds"])){
+       if($pos->y > $config["Height"]){
+         $player->sendMessage($config["Message"]);
+         $event->cancel();
     }
    }
   }
