@@ -1,0 +1,12 @@
+# Height Limit
+Height: 90
+
+# Message
+
+Message: "You Can't Place Blocks Over the World Height Limit"
+
+# World
+
+Worlds:
+ - "world"
+ - "test"
