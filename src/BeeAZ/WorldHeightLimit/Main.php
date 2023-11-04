@@ -15,7 +15,12 @@ class Main extends PluginBase implements Listener{
   
   public function onPlace(BlockPlaceEvent $event){
    $player = $event->getPlayer();
-   $pos = $event->getBlock()->getPosition();
+   $blockTransaction = $event->getTransaction()->getBlocks();
+   $blocks = null;
+   foreach ($blockTransaction as [$x, $y, $z, $block]) {
+      $blocks = $block;
+   }
+   $pos = $blocks->getPosition();
    $world = $player->getWorld()->getFolderName();
    $config = $this->getConfig()->getAll();
      if(in_array($world, $config["Worlds"])){
